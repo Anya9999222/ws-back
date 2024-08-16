@@ -4,6 +4,7 @@ import WebSocket, { WebSocketServer } from "ws";
 import cors from "cors";
 import bodyParser from "body-parser";
 import * as crypto from "crypto";
+import 'dotenv/config';
 
 const app = express();
 
@@ -80,7 +81,7 @@ wsServer.on("connection", (ws) => {
     .forEach((o) => o.send(JSON.stringify(userState)));
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 const bootstrap = async () => {
   try {
